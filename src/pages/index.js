@@ -1,0 +1,9 @@
+export { default as DashboardPage } from "./DashboardPage";
+export { default as TransactionPage } from "./TransactionPage";
+export { default as InvestmentPage } from "./InvestmentPage";
+export { default as AccountsPage } from "./AccountsPage";
+export { default as SettingsPage } from "./SettingsPage";
+export { default as CreditCardPage } from "./CreditCardPage";
+export { default as LoansPage } from "./LoansPage";
+export { default as ServicesPage } from "./ServicesPage";
+export { default as MyPrivilegesPage } from "./MyPrivilegesPage";
