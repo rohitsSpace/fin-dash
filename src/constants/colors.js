@@ -1,0 +1,15 @@
+export const COLORS = {
+  background: "#E6EFF5",
+  sidebarBackground: "#1d2327",
+  sidebarText: "#343C6A",
+  headerBackground: "#ffffff",
+  headerBorder: "#dcdcde",
+  headerText: "#50575e",
+  primary: "#2271b1",
+  notification: "#d63638",
+  cardBackground: "#ffffff",
+  cardBorder: "#dcdcde",
+  hoverBackground: "#f0f0f1",
+  activeBackground: "#2c3338",
+  activeBorder: "#232323",
+};
