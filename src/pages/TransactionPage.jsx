@@ -1,4 +1,4 @@
-import { DashboardCard } from "../App";
+import { DashboardCard } from "../components/layout/styles";
 
 const TransactionPage = () => (
   <>
