@@ -4,6 +4,8 @@ import { Col, Container, Row } from "../components/gridsystem";
 import styled from "styled-components";
 import RecentTransactions from "../components/RecentTransactions/RecentTransactions";
 import { TransactionsHeader } from "../components/RecentTransactions/styles";
+import WeeklyActivityChart from "../components/WeeklyActivityChart/WeeklyActivityChart";
+import ExpenseStatisticsChart from "../components/ExpenseStatisticsChart/ExpenseStatisticsChart";
 
 export const CardsHeader = styled.div`
   display: flex;
@@ -73,6 +75,28 @@ const DashboardPage = () => (
           <TransactionsHeader>Recent Transaction</TransactionsHeader>
           <DashboardCard $padding={"0"}>
             <RecentTransactions />
+          </DashboardCard>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12} md={8}>
+          <CardsHeader>
+            <CardsTitle>Weekly Activity</CardsTitle>
+          </CardsHeader>
+          <Row>
+            <Col>
+              <DashboardCard $padding={"0"}>
+                <WeeklyActivityChart />
+              </DashboardCard>
+            </Col>
+          </Row>
+        </Col>
+        <Col sm={12} md={4}>
+          <CardsHeader>
+            <CardsTitle>Expense Statistics</CardsTitle>
+          </CardsHeader>
+          <DashboardCard $padding={"0"}>
+            <ExpenseStatisticsChart />
           </DashboardCard>
         </Col>
       </Row>
