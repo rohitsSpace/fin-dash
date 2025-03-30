@@ -87,6 +87,7 @@ const WeeklyActivityChart = () => {
         },
         ticks: {
           padding: 10,
+          stepSize: 100,
         },
       },
       x: {

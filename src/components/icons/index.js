@@ -1,4 +1,6 @@
 export { default as AccountsIcon } from "./AccountsIcon";
+export { default as ChevronLeft } from "./ChevronLeft";
+export { default as ChevronRight } from "./ChevronRight";
 export { default as ChipCardIcon } from "./ChipCardIcon";
 export { default as CreditCardsIcon } from "./CreditCardsIcon";
 export { default as HomeIcon } from "./HomeIcon";
@@ -11,3 +13,4 @@ export { default as ServicesIcon } from "./ServicesIcon";
 export { default as SettingsIcon } from "./SettingsIcon";
 export { default as SettingsIconOutline } from "./SettingsIconOutline";
 export { default as TransactionIcon } from "./TransactionIcon";
+export { default as SendIcon } from "./SendIcon";

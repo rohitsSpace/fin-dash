@@ -6,6 +6,8 @@ import RecentTransactions from "../components/RecentTransactions/RecentTransacti
 import { TransactionsHeader } from "../components/RecentTransactions/styles";
 import WeeklyActivityChart from "../components/WeeklyActivityChart/WeeklyActivityChart";
 import ExpenseStatisticsChart from "../components/ExpenseStatisticsChart/ExpenseStatisticsChart";
+import QuickTransfer from "../components/QuickTransfer/QuickTransfer";
+import BalanceHistoryChart from "../components/BalanceHistoryChart/BalanceHistoryChart";
 
 export const CardsHeader = styled.div`
   display: flex;
@@ -97,6 +99,28 @@ const DashboardPage = () => (
           </CardsHeader>
           <DashboardCard $padding={"0"}>
             <ExpenseStatisticsChart />
+          </DashboardCard>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={12} md={5}>
+          <CardsHeader>
+            <CardsTitle>Quick Transfer</CardsTitle>
+          </CardsHeader>
+          <Row>
+            <Col>
+              <DashboardCard $padding={"0"}>
+                <QuickTransfer />
+              </DashboardCard>
+            </Col>
+          </Row>
+        </Col>
+        <Col sm={12} md={7}>
+          <CardsHeader>
+            <CardsTitle>Balance History</CardsTitle>
+          </CardsHeader>
+          <DashboardCard $padding={"0"}>
+            <BalanceHistoryChart />
           </DashboardCard>
         </Col>
       </Row>
