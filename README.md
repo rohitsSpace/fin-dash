@@ -11,9 +11,11 @@ This is a responsive financial dashboard application built with React and styled
 - Quick transfer functionality
 - Balance history visualization
 - Edit Profile details
-- Routing of different section of the app
+- Routing of different sections of the app
 
 ## Live Demo
+
+https://github.com/user-attachments/assets/ae7ce59b-804a-4f18-8149-ee402a94372e
 
 The application is deployed on Vercel:  
 👉 [https://soar-task-mu.vercel.app/](https://soar-task-mu.vercel.app/)
