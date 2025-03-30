@@ -89,7 +89,7 @@ export const StyledFormField = styled(Field)`
   border: 1px solid #dfeaf2;
   border-radius: 1rem;
   font-size: 16px;
-  color: ${COLORS.shipCove};
+  color: ${COLORS.shipCoveV2};
 
   &:disabled {
     background-color: #f5f5f5;

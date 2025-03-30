@@ -10,7 +10,7 @@ export const Tabs = styled.div`
 export const Tab = styled.div`
   padding: 10px 20px;
   cursor: pointer;
-  color: ${(props) => (props.active ? COLORS.mindShaft : COLORS.shipCove)};
+  color: ${(props) => (props.active ? COLORS.mindShaft : COLORS.shipCoveV2)};
   font-weight: ${(props) => (props.active ? "600" : "500")};
   position: relative;
   transition: color 0.2s ease;

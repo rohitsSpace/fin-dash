@@ -17,6 +17,18 @@ const ChartContainer = styled.div`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
+const DataTable = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+`;
+
 const ExpenseStatisticsChart = () => {
   const data = {
     labels: ["Entertainment", "Bill Expense", "Investment", "Others"],
@@ -34,6 +46,11 @@ const ExpenseStatisticsChart = () => {
       },
     ],
   };
+
+  const chartDescription = `Pie chart showing expense distribution: 
+    ${data.labels
+      .map((label, index) => `${label}: ${data.datasets[0].data[index]}%`)
+      .join(", ")}`;
 
   const options = {
     responsive: true,
@@ -61,10 +78,39 @@ const ExpenseStatisticsChart = () => {
     },
   };
 
+  const dataTable = (
+    <DataTable aria-hidden="true">
+      <table>
+        <caption>Expense Statistics Data</caption>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.labels.map((label, index) => (
+            <tr key={index}>
+              <td>{label}</td>
+              <td>{data.datasets[0].data[index]}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </DataTable>
+  );
+
   return (
-    <ChartContainer>
+    <ChartContainer role="region" aria-label="Expense Statistics Chart">
+      {dataTable}
       <ChartWrapper>
-        <Pie data={data} options={options} plugins={[ChartDataLabels]} />
+        <Pie
+          data={data}
+          options={options}
+          plugins={[ChartDataLabels]}
+          aria-label={chartDescription}
+          role="img"
+        />
       </ChartWrapper>
     </ChartContainer>
   );

@@ -6,8 +6,10 @@ export const COLORS = {
   notification: "#d63638",
   hoverBackground: "#f0f0f1",
   activeBackground: "#2c3338",
-  sidebarInactive: "#B1B1B1",
+  // color: '#767676',#B1B1B1
+  sidebarInactive: "#767676",
   shipCove: "#718EBF",
+  shipCoveV2: "#4A6DB2",
   mindShaft: "#232323",
   rhino: "#343C6A",
   white: "#FFFFFF",

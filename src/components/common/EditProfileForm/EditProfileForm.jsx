@@ -27,11 +27,12 @@ const OptimizedFormGroup = ({ errors, touched }) => {
         <FormRow key={`row-${rowIndex}`}>
           {row.map((field) => (
             <FormField key={field.name}>
-              <Label>
+              <Label htmlFor={field.name}>
                 {field.label}
                 {field.required && <span style={{ color: "red" }}>*</span>}
               </Label>
               <StyledFormField
+                id={field.name}
                 name={field.name}
                 type={field.type}
                 required={field.required}

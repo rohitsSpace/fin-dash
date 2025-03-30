@@ -23,7 +23,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar, menuItems, location }) => (
         <LogoIcon color={COLORS.mindShaft} />
         <span>Soar Task</span>
       </Logo>
-      <MenuList>
+      <MenuList role="menu" aria-label="Main navigation">
         {menuItems.map((item) => (
           <MenuItem
             key={item.id}
@@ -31,6 +31,8 @@ const Sidebar = ({ sidebarOpen, closeSidebar, menuItems, location }) => (
             to={item.path}
             active={location.pathname === item.path}
             onClick={closeSidebar}
+            role="menuitem"
+            tabIndex={0}
           >
             <MenuIcon>{item.icon}</MenuIcon>
             {item.label}

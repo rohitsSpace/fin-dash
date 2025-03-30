@@ -15,9 +15,17 @@ const RecentTransactions = () => {
   return (
     <>
       <RecentTransactionsCard>
-        <TransactionList>
+        <TransactionList aria-label="Credit cards" role="list">
           {TRANSACTIONS().map((transaction, index) => (
-            <TransactionItem key={index}>
+            <TransactionItem
+              key={index}
+              aria-label={`${
+                transaction.type === "deposit" ? "Deposit" : "Withdrawal"
+              } of ${transaction.amount.replace("+", "")} on ${
+                transaction.date
+              } from ${transaction.title}`}
+              tabIndex={0}
+            >
               <TransactionIcon type={transaction.type}>
                 {transaction.icon}
               </TransactionIcon>

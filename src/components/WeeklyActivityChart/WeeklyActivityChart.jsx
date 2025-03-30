@@ -29,6 +29,18 @@ const ChartContainer = styled.div`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
+const DataTable = styled.div`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+`;
+
 export const ChartWrapper = styled.div`
   height: 350px;
 
@@ -109,10 +121,49 @@ const WeeklyActivityChart = () => {
     },
   };
 
+  const chartDescription = `Weekly activity bar chart showing deposits and withdrawals. 
+  Saturday: $${data.datasets[0].data[0]} deposited, $${data.datasets[1].data[0]} withdrawn.
+  Sunday: $${data.datasets[0].data[1]} deposited, $${data.datasets[1].data[1]} withdrawn.
+  Monday: $${data.datasets[0].data[2]} deposited, $${data.datasets[1].data[2]} withdrawn.
+  Tuesday: $${data.datasets[0].data[3]} deposited, $${data.datasets[1].data[3]} withdrawn.
+  Wednesday: $${data.datasets[0].data[4]} deposited, $${data.datasets[1].data[4]} withdrawn.
+  Thursday: $${data.datasets[0].data[5]} deposited, $${data.datasets[1].data[5]} withdrawn.
+  Friday: $${data.datasets[0].data[6]} deposited, $${data.datasets[1].data[6]} withdrawn.`;
+
+  const dataTable = (
+    <DataTable aria-hidden="true">
+      <table>
+        <caption>Weekly Activity Data</caption>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Deposit ($)</th>
+            <th>Withdraw ($)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.labels.map((label, index) => (
+            <tr key={index}>
+              <td>{label}</td>
+              <td>{data.datasets[0].data[index]}</td>
+              <td>{data.datasets[1].data[index]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </DataTable>
+  );
+
   return (
-    <ChartContainer>
+    <ChartContainer role="region" aria-label="Weekly Activity Chart">
       <ChartWrapper>
-        <Bar data={data} options={options} />
+        {dataTable}
+        <Bar
+          data={data}
+          options={options}
+          aria-label={chartDescription}
+          role="img"
+        />
       </ChartWrapper>
     </ChartContainer>
   );

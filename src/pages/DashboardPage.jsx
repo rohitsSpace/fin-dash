@@ -61,10 +61,16 @@ const DashboardPage = () => (
               flex-wrap: nowrap;
               overflow: scroll;
             `}
+          role="list"
+          aria-label="Credit cards"
         >
           {CARDS_DATA.map((card, index) => (
-            <Col sm={12} md={6} key={index}>
-              <DashboardCard $padding={"0"}>
+            <Col sm={12} md={6} key={index} role="listitem">
+              <DashboardCard
+                $padding={"0"}
+                aria-label={`Card ending with ${card.lastFourDigits}`}
+                tabIndex={0}
+              >
                 <CreditCard variant={card.variant} cardData={card} />
               </DashboardCard>
             </Col>

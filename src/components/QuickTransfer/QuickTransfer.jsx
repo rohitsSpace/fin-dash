@@ -54,17 +54,27 @@ const QuickTransfer = () => {
     <QuickTransferContainer>
       <ContactsContainer>
         {showLeftButton && (
-          <ScrollButton onClick={() => scrollContacts("left")}>
+          <ScrollButton
+            onClick={() => scrollContacts("left")}
+            aria-label="scroll to left for accessing quick transfers"
+          >
             <ChevronLeft />
           </ScrollButton>
         )}
 
-        <ContactsList ref={contactsRef}>
+        <ContactsList
+          ref={contactsRef}
+          role="list"
+          aria-label="Quick transfer contacts"
+        >
           {CONTACTS.map((contact, index) => (
             <ContactItem
               key={index}
               active={selectedContact?.name === contact.name}
               onClick={() => setSelectedContact(contact)}
+              role="listitem"
+              aria-label={`Transfer to ${contact.name}, ${contact.role}`}
+              tabIndex={0}
             >
               <Avatar>
                 {contact.name
@@ -85,7 +95,11 @@ const QuickTransfer = () => {
         </ContactsList>
 
         {showRightButton && (
-          <ScrollButton right onClick={() => scrollContacts("right")}>
+          <ScrollButton
+            right
+            onClick={() => scrollContacts("right")}
+            aria-label="scroll to right for accessing quick transfers"
+          >
             <ChevronRight />
           </ScrollButton>
         )}

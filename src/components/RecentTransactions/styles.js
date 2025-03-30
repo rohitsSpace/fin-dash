@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { COLORS } from "../../constants/colors";
 
+/**
+ * Due to accessibility issue some color as changed to nearest possible
+ * color which are matching 4.5:1 contrast ratio
+ *
+ * - Reported by axe chrome, firefox browser extension
+ */
 export const RecentTransactionsCard = styled.div`
   background: ${COLORS.white};
   border-radius: 25px;
@@ -54,7 +60,7 @@ export const TransactionIcon = styled.div`
   svg {
     width: 28px;
     height: 28px;
-    color: ${(props) => (props.type === "deposit" ? "#4CAF50" : "#F44336")};
+    color: ${(props) => (props.type === "deposit" ? "#2E7D32" : "#F44336")};
   }
 `;
 
@@ -71,12 +77,13 @@ export const TransactionTitle = styled.span`
 
 export const TransactionDate = styled.span`
   font-size: 0.75rem;
-  color: #888888;
+
+  color: #5a75a8;
 `;
 
 export const TransactionAmount = styled.span`
   font-weight: 600;
-  color: ${(props) => (props.type === "deposit" ? "#4CAF50" : "#F44336")};
+  color: ${(props) => (props.type === "deposit" ? "#2E7D32" : "#d32f2f")};
 `;
 
 export const TransactionDetail = styled.div`

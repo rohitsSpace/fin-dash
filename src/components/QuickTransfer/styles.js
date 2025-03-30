@@ -19,7 +19,7 @@ export const AmountInput = styled.input`
   border-radius: 50px;
   font-size: 18px;
   font-weight: 500;
-  color: ${COLORS.shipCove};
+  color: "#4A6DB2";
   background: #edf1f7;
   outline: none;
   transition: border 0.2s;
@@ -51,7 +51,6 @@ export const SendButton = styled.button`
   z-index: 1;
   &:hover {
     background: ${COLORS.rhino};
-    /* transform: translateY(-2px); */
   }
 
   &:active {
@@ -142,7 +141,7 @@ export const Name = styled.span`
 `;
 
 export const Role = styled.span`
-  color: ${COLORS.shipCove};
+  color: ${COLORS.shipCoveV2};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   font-size: 0.75rem;
 `;
@@ -187,6 +186,6 @@ export const AmountInputContainer = styled.div`
 
 export const Label = styled.div`
   font-size: 0.875rem;
-  color: ${COLORS.shipCove};
+  color: ${COLORS.shipCoveV2};
   margin-bottom: 0.5rem;
 `;
