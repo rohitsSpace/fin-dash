@@ -174,6 +174,7 @@ export const ScrollButton = styled.button`
   svg {
     display: block;
   }
+  ${({ styles }) => styles}
 `;
 
 export const AmountInputContainer = styled.div`
