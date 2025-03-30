@@ -92,7 +92,12 @@ const Header = ({ toggleSidebar, isMobileBreakPoint, closeSidebar }) => {
             </Dropdown>
           </HeaderIcon>
 
-          <UserProfile onClick={toggleUserDropdown}>
+          <UserProfile
+            onClick={toggleUserDropdown}
+            role="button"
+            aria-label="profile menu"
+            tabIndex={0}
+          >
             <Avatar>
               <img alt="user icon" src="/assets/user.png" loading="lazy" />
             </Avatar>

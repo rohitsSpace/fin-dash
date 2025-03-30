@@ -1,30 +1,42 @@
 import { useState } from "react";
 import EditProfileForm from "../EditProfileForm/EditProfileForm";
 import { Tab, TabContent, Tabs } from "./styles";
+import { TABS } from "../../../constants/tabs";
 
 const FinTab = ({ schema, handleSubmit, handleImageChange }) => {
   const [activeTab, setActiveTab] = useState("edit-profile");
+
+  const handleKeyDown = (event, index) => {
+    let newIndex = index;
+    if (event.key === "ArrowRight") {
+      newIndex = (index + 1) % TABS.length;
+    } else if (event.key === "ArrowLeft") {
+      newIndex = (index - 1 + TABS.length) % TABS.length;
+    } else if (event.key === "Home") {
+      newIndex = 0;
+    } else if (event.key === "End") {
+      newIndex = TABS.length - 1;
+    }
+    setActiveTab(TABS[newIndex].id);
+  };
   return (
     <>
-      <Tabs>
-        <Tab
-          active={activeTab === "edit-profile"}
-          onClick={() => setActiveTab("edit-profile")}
-        >
-          Edit Profile
-        </Tab>
-        <Tab
-          active={activeTab === "preferences"}
-          onClick={() => setActiveTab("preferences")}
-        >
-          Preferences
-        </Tab>
-        <Tab
-          active={activeTab === "security"}
-          onClick={() => setActiveTab("security")}
-        >
-          Security
-        </Tab>
+      <Tabs role="tablist" aria-label="Settings Tabs">
+        {TABS.map(({ id, label }, index) => (
+          <Tab
+            key={id}
+            role="tab"
+            id={`tab-${id}`}
+            tabIndex={activeTab === id ? 0 : -1}
+            aria-selected={activeTab === id}
+            active={activeTab === id}
+            aria-controls={`panel-${id}`}
+            onClick={() => setActiveTab(id)}
+            onKeyDown={(event) => handleKeyDown(event, index)}
+          >
+            {label}
+          </Tab>
+        ))}
       </Tabs>
 
       <TabContent>
