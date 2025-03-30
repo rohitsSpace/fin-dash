@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { useLocation } from "react-router-dom";
-import Sidebar from "./Sidebar";
 import Header from "./Header";
-import useMobileDetect from "../../hooks/useMobileDetect";
-import useDebounce from "../../hooks/useDebounce";
-import { menuItems } from "../../constants/menuItems";
 import RoutesComponent from "../common/RoutesComponent";
+import Sidebar from "./Sidebar";
+import useDebounce from "../../hooks/useDebounce";
+import useMobileDetect from "../../hooks/useMobileDetect";
 import { ContentArea, DashboardContainer, MainContent } from "../common/styles";
 import { SearchBar, SearchIcon } from "./styles";
+import { menuItems } from "../../constants/menuItems";
+import { useLocation } from "react-router-dom";
 
 const AppLayout = React.memo(() => {
   const { isMobile: isMobileBreakPoint } = useMobileDetect();

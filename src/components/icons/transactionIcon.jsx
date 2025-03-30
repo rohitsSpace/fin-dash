@@ -31,4 +31,5 @@ const TransactionIcon = ({ size = 25, ...props }) => (
     />
   </svg>
 );
+
 export default TransactionIcon;

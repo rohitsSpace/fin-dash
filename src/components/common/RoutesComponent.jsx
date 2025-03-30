@@ -1,6 +1,6 @@
-import { Suspense } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { Suspense } from "react";
 import { routes } from "../../routes";
 
 const RoutesComponent = ({ debouncedSearchQuery }) => {

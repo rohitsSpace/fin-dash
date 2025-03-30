@@ -1,7 +1,9 @@
 import * as React from "react";
+import { COLORS } from "../../constants/colors";
+
 const MasterCardIcon = ({ variant = "light", ...props }) => {
   const colors = {
-    light: "#fff",
+    light: COLORS.white,
     dark: "#000",
   };
 

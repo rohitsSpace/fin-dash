@@ -1,17 +1,20 @@
 import styled from "styled-components";
+import { COLORS } from "../../constants/colors";
 
 export const RecentTransactionsCard = styled.div`
-  background: #ffffff;
+  background: ${COLORS.white};
   border-radius: 25px;
   padding: 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   width: 100%;
+  max-height: 275px;
+  overflow: scroll;
 `;
 
 export const TransactionsHeader = styled.h2`
   font-size: 1.25rem;
   font-weight: 600;
-  color: #343c6a;
+  color: ${COLORS.rhino};
   margin: 0 0 1.5rem 0;
 `;
 

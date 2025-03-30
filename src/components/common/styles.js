@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../constants/colors";
 
 export const DashboardContainer = styled.div`
   display: flex;
@@ -19,9 +20,9 @@ export const ContentArea = styled.main`
   flex: 1;
   padding: 20px;
   overflow-y: auto;
-  background-color: #f5f7fa;
+  background-color: ${COLORS.catskillWhite};
   @media (max-width: 768px) {
-    background-color: #fff;
+    background-color: ${COLORS.white};
     padding: 25px 0;
   }
 `;
@@ -29,7 +30,7 @@ export const ContentArea = styled.main`
 export const DashboardCard = styled.div.attrs((props) => ({
   $padding: props.$padding || "1.5rem",
 }))`
-  background: #ffffff;
+  background: ${COLORS.white};
   border: 1px solid #dfeaf2;
   border-radius: 1.5rem;
   padding: ${(props) => props.$padding};

@@ -1,25 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import { ChipCardIcon, MasterCardIcon } from "./icons";
+import { COLORS } from "../constants/colors";
 
 const CardContainer = styled.div`
-  border-radius: 25px;
-  background: linear-gradient(107deg, #5b5a6f 2.61%, #000 101.2%);
   padding: 25px;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  padding: 25px;
   background: ${({ variant }) =>
     variant === "dark"
       ? "linear-gradient(107deg, #5B5A6F 2.61%, #000 101.2%)"
-      : "#ffffff"};
-  color: ${({ variant }) => (variant === "dark" ? "white" : "#333")};
+      : COLORS.white};
+  color: ${({ variant }) => (variant === "dark" ? COLORS.white : "#333")};
   border: ${({ variant }) =>
     variant === "light" ? "1px solid #eaeaea" : "none"};
+  border-radius: 1.5rem;
 `;
 
 const CardTop = styled.div`
@@ -50,7 +47,7 @@ const CardMiddle = styled.div`
 `;
 
 const CardNumber = styled.span`
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 2px;
   font-family: "Courier New", monospace;
 `;
@@ -65,7 +62,7 @@ const CardBottom = styled.div`
   background: ${({ variant }) =>
     variant === "dark"
       ? "linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.00) 100%) "
-      : "#ffffff"};
+      : COLORS.white};
 `;
 
 const CardInfo = styled.p`
@@ -81,13 +78,27 @@ const InfoGroup = styled.div`
   }
 `;
 
-const CreditCard = ({ variant = "dark" }) => {
+const CreditCard = ({
+  variant = "dark",
+  cardData = {
+    balance: 5756,
+    cardHolder: "Eddy Cusuma",
+    validThru: "12/22",
+    cardNumber: "3778 **** **** 1234",
+  },
+}) => {
+  const formattedBalance = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 0,
+  }).format(cardData.balance);
+
   return (
     <CardContainer variant={variant}>
       <CardTop>
         <div>
           <CardLabel>Balance</CardLabel>
-          <CardBalance>$5,756</CardBalance>
+          <CardBalance>{formattedBalance}</CardBalance>
         </div>
         <ChipCardIcon variant={variant === "dark" ? "light" : "dark"} />
       </CardTop>
@@ -95,17 +106,17 @@ const CreditCard = ({ variant = "dark" }) => {
       <CardMiddle>
         <InfoGroup>
           <CardLabel>CARD HOLDER</CardLabel>
-          <CardInfo>Eddy Cusuma</CardInfo>
+          <CardInfo>{cardData.cardHolder}</CardInfo>
         </InfoGroup>
 
         <InfoGroup>
           <CardLabel>VALID THRU</CardLabel>
-          <CardInfo>12/22</CardInfo>
+          <CardInfo>{cardData.validThru}</CardInfo>
         </InfoGroup>
       </CardMiddle>
 
       <CardBottom variant={variant}>
-        <CardNumber>3778 ••••••••• 1234</CardNumber>
+        <CardNumber>{cardData.cardNumber}</CardNumber>
         <MasterCardIcon variant={variant === "dark" ? "light" : "dark"} />
       </CardBottom>
     </CardContainer>

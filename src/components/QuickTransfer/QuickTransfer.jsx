@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "../icons";
 import MoneyTransfer from "./MoneyTransfer";
+import { ChevronLeft, ChevronRight } from "../icons";
 import {
   AmountInputContainer,
   Avatar,
@@ -14,17 +14,9 @@ import {
   Role,
   ScrollButton,
 } from "./styles";
+import { CONTACTS } from "../../constants/contacts";
 
 const QuickTransfer = () => {
-  const contacts = [
-    { name: "Livia Bator", role: "CEO" },
-    { name: "Randy Press", role: "Director" },
-    { name: "Workman", role: "Designer" },
-    { name: "Sarah Johnson", role: "Developer" },
-    { name: "Mike Chen", role: "Manager" },
-    { name: "Emma Wilson", role: "Analyst" },
-  ];
-
   const contactsRef = useRef(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
@@ -68,7 +60,7 @@ const QuickTransfer = () => {
         )}
 
         <ContactsList ref={contactsRef}>
-          {contacts.map((contact, index) => (
+          {CONTACTS.map((contact, index) => (
             <ContactItem
               key={index}
               active={selectedContact?.name === contact.name}

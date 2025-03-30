@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../constants/colors";
 
 export const TransferContainer = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ export const AmountInput = styled.input`
   border-radius: 50px;
   font-size: 18px;
   font-weight: 500;
-  color: #718ebf;
+  color: ${COLORS.shipCove};
   background: #edf1f7;
   outline: none;
   transition: border 0.2s;
@@ -39,7 +40,7 @@ export const SendButton = styled.button`
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 1.25rem;
-  background: #232323;
+  background: ${COLORS.mindShaft};
   color: white;
   border: none;
   border-radius: 50px;
@@ -49,8 +50,8 @@ export const SendButton = styled.button`
   transition: all 0.2s;
   z-index: 1;
   &:hover {
-    background: #5d4aec;
-    transform: translateY(-2px);
+    background: ${COLORS.rhino};
+    /* transform: translateY(-2px); */
   }
 
   &:active {
@@ -97,7 +98,7 @@ export const ContactItem = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
   flex-shrink: 0;
-  border: 2px solid ${(props) => (props.active ? "#6c5ce7" : "transparent")};
+  border: 2px solid ${(props) => (props.active ? COLORS.rhino : "transparent")};
   background: ${(props) =>
     props.active ? "rgba(108, 92, 231, 0.1)" : "transparent"};
 
@@ -111,7 +112,7 @@ export const Avatar = styled.div`
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: ${(props) => props.color || "#6c5ce7"};
+  background: ${(props) => props.color || COLORS.rhino};
   color: white;
   display: flex;
   align-items: center;
@@ -132,7 +133,7 @@ export const ContactInfo = styled.div`
 
 export const Name = styled.span`
   font-size: 16px;
-  color: #232323;
+  color: ${COLORS.mindShaft};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   white-space: nowrap;
   overflow: hidden;
@@ -141,7 +142,7 @@ export const Name = styled.span`
 `;
 
 export const Role = styled.span`
-  color: #718ebf;
+  color: ${COLORS.shipCove};
   font-weight: ${(props) => (props.active ? "600" : "normal")};
   font-size: 0.75rem;
 `;
@@ -154,7 +155,7 @@ export const ScrollButton = styled.button`
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: white;
+  background: ${COLORS.white};
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -167,6 +168,7 @@ export const ScrollButton = styled.button`
 
   &:hover {
     background: #f5f5f5;
+    border-color: ${COLORS.rhino};
     transform: translateY(-50%) scale(1.05);
   }
 
@@ -174,6 +176,7 @@ export const ScrollButton = styled.button`
     display: block;
   }
 `;
+
 export const AmountInputContainer = styled.div`
   margin-bottom: 1.5rem;
   display: flex;
@@ -184,6 +187,6 @@ export const AmountInputContainer = styled.div`
 
 export const Label = styled.div`
   font-size: 0.875rem;
-  color: #718ebf;
+  color: ${COLORS.shipCove};
   margin-bottom: 0.5rem;
 `;

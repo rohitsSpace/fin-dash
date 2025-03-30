@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { COLORS } from "../../constants/colors";
-import LogoIcon from "../icons/Logo";
+import LogoIcon from "../icons/LogoIcon";
 import {
   CloseSidebar,
   Logo,
@@ -20,7 +20,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar, menuItems, location }) => (
     </CloseSidebar>
     <SidebarContent>
       <Logo>
-        <LogoIcon color={COLORS.activeBorder} />
+        <LogoIcon color={COLORS.mindShaft} />
         <span>Soar Task</span>
       </Logo>
       <MenuList>

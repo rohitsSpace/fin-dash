@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS } from "../../constants/colors";
 
 const SpinnerContainer = styled.div`
   display: flex;
@@ -10,8 +11,8 @@ const SpinnerContainer = styled.div`
 const Spinner = styled.div`
   width: 50px;
   height: 50px;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #3498db;
+  border: 5px solid ${COLORS.shipCove};
+  border-top: 5px solid ${COLORS.mindShaft};
   border-radius: 50%;
   animation: spin 1s linear infinite;
 

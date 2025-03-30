@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const NotificationIcon = ({ size = 25, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,4 +23,5 @@ const NotificationIcon = ({ size = 25, ...props }) => (
     />
   </svg>
 );
+
 export default NotificationIcon;

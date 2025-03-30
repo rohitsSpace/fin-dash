@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const SendIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -14,4 +15,5 @@ const SendIcon = (props) => (
     />
   </svg>
 );
+
 export default SendIcon;

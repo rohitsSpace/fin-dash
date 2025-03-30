@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import ChartDataLabels from "chartjs-plugin-datalabels";
+import { COLORS } from "../../constants/colors";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { ChartWrapper } from "../WeeklyActivityChart/WeeklyActivityChart";
+import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -22,8 +23,13 @@ const ExpenseStatisticsChart = () => {
     datasets: [
       {
         data: [30, 15, 20, 35],
-        backgroundColor: ["#343C6A", "#396AFF", "#FC7900", "#232323"],
-        borderColor: ["#FFFFFF", "#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        backgroundColor: [
+          COLORS.rhino,
+          COLORS.dodgerBlue,
+          "#FC7900",
+          COLORS.mindShaft,
+        ],
+        borderColor: [COLORS.white, COLORS.white, COLORS.white, COLORS.white],
         borderWidth: 2,
       },
     ],
@@ -44,7 +50,7 @@ const ExpenseStatisticsChart = () => {
         formatter: (value, context) => {
           return `${value}% \n ${context.chart.data.labels[context.dataIndex]}`;
         },
-        color: "#fff",
+        color: COLORS.white,
         font: {
           weight: "bold",
           size: 14,

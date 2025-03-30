@@ -1,3 +1,5 @@
+import { COLORS } from "../../constants/colors";
+
 const ChevronRight = () => (
   <svg
     width="24"
@@ -8,7 +10,7 @@ const ChevronRight = () => (
   >
     <path
       d="M9 18L15 12L9 6"
-      stroke="#718EBF"
+      stroke={COLORS.shipCove}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"

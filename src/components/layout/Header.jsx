@@ -16,6 +16,7 @@ import {
   ToolbarIcons,
   UserProfile,
 } from "./styles";
+import { COLORS } from "../../constants/colors";
 
 const Header = ({ toggleSidebar, isMobileBreakPoint, closeSidebar }) => {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
@@ -41,7 +42,7 @@ const Header = ({ toggleSidebar, isMobileBreakPoint, closeSidebar }) => {
           fontSize: "1.5rem",
           margin: 0,
           whiteSpace: "nowrap",
-          color: "#343C6A",
+          color: `${COLORS.rhino}`,
         }}
       >
         {currentPage.id === "dashboard" ? "Overview" : currentPage.label}
@@ -82,7 +83,7 @@ const Header = ({ toggleSidebar, isMobileBreakPoint, closeSidebar }) => {
             hasNotification
             onClick={toggleNotifications}
           >
-            <NotificationIcon color="#396AFF" />
+            <NotificationIcon color={COLORS.dodgerBlue} />
             <Dropdown open={notificationsOpen}>
               <a href="#notification1">Notification 1</a>
               <a href="#notification2">Notification 2</a>

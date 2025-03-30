@@ -4,7 +4,7 @@ import { FiSearch } from "react-icons/fi";
 
 export const SidebarContainer = styled.aside`
   width: ${(props) => (props.sidebarOpen ? "250px" : "0")};
-  color: ${COLORS.sidebarText};
+  color: ${COLORS.rhino};
   overflow: hidden;
   transition: width 0.3s ease;
   position: relative;
@@ -12,13 +12,13 @@ export const SidebarContainer = styled.aside`
   height: 100vh;
   position: sticky;
   top: 0;
-  border: 1px solid #e6eff5;
+  border: 1px solid ${COLORS.blackSqueeze};
 
   @media (max-width: 768px) {
     position: fixed;
     width: ${(props) => (props.sidebarOpen ? "100%" : "0")};
     z-index: 100;
-    background: #f5f7fa;
+    background: ${COLORS.catskillWhite};
   }
 `;
 
@@ -35,7 +35,7 @@ export const CloseSidebar = styled.button`
   right: 10px;
   background: none;
   border: none;
-  color: ${COLORS.sidebarText};
+  color: ${COLORS.rhino};
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
@@ -69,20 +69,20 @@ export const MenuItem = styled.li`
   align-items: center;
   gap: 10px;
   white-space: nowrap;
-  color: #b1b1b1;
+  color: ${COLORS.sidebarInactive};
   position: relative;
 
   &:hover {
-    color: #232323;
+    color: ${COLORS.mindShaft};
     svg {
-      fill: #232323;
+      fill: ${COLORS.mindShaft};
     }
   }
 
   ${(props) =>
     props.active &&
     `
-    color: #232323;
+    color: ${COLORS.mindShaft};
     &::before {
       content: '';
       position: absolute;
@@ -90,7 +90,7 @@ export const MenuItem = styled.li`
       top: 0;
       height: 100%;
       width: 6px;
-      background-color: ${COLORS.activeBorder};
+      background-color: ${COLORS.mindShaft};
       border-radius: 0px 10px 10px 0px;
     }
   `}
@@ -100,17 +100,17 @@ export const MenuIcon = styled.span`
   transition: color 0.2s;
 
   ${MenuItem}:hover & {
-    color: ${COLORS.activeBorder};
+    color: ${COLORS.mindShaft};
   }
 
   ${MenuItem}[active] & {
-    color: ${COLORS.activeBorder};
+    color: ${COLORS.mindShaft};
   }
 `;
 
 export const HeaderContainer = styled.header`
-  background-color: #ffffff;
-  border-bottom: 1px solid #dcdcde;
+  background-color: ${COLORS.white};
+  border-bottom: 1px solid ${COLORS.icon};
   padding: 0 25px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   height: 100px;
@@ -160,41 +160,45 @@ export const SearchBar = styled.div`
     width: 100%;
     height: 50px;
     padding: 8px 10px 8px 3rem;
-    border: 1px solid #f5f7fa;
+    border: 1px solid ${COLORS.catskillWhite};
     border-radius: 40px;
-    background-color: #f5f7fa;
+    background-color: ${COLORS.catskillWhite};
     transition: all 0.2s;
     color: #50575e;
 
     &:focus {
-      background-color: #fff;
+      background-color: ${COLORS.white};
       border-color: #2271b1;
       box-shadow: 0 0 0 1px #2271b1;
       outline: none;
     }
     &::placeholder {
-      color: #718ebf;
+      color: ${COLORS.shipCove};
       opacity: 1;
     }
 
     &:-ms-input-placeholder {
-      color: #718ebf;
+      color: ${COLORS.shipCove};
     }
 
     &::-ms-input-placeholder {
-      color: #718ebf;
+      color: ${COLORS.shipCove};
     }
   }
 
   @media (max-width: 768px) {
+    margin-top: 0.25rem;
     width: 100%;
+    &:focus-within {
+      width: 100%;
+    }
   }
 `;
 
 export const SearchIcon = styled(FiSearch)`
   position: absolute;
   left: 1.5rem;
-  color: #718ebf;
+  color: ${COLORS.shipCove};
 `;
 
 export const ToolbarIcons = styled.div`
@@ -219,7 +223,7 @@ export const HeaderIcon = styled.button`
   justify-content: center;
   width: 50px;
   height: 50px;
-  background-color: #f5f7fa;
+  background-color: ${COLORS.catskillWhite};
   border-radius: 50%;
 
   &:hover {
@@ -239,7 +243,7 @@ export const HeaderIcon = styled.button`
       height: .75rem;
       background-color: #d63638;
       border-radius: 50%;
-      border: 2px solid #fff;
+      border: 2px solid ${COLORS.white};
     }
   `}
 
@@ -298,8 +302,8 @@ export const Dropdown = styled.div`
   position: absolute;
   right: 0;
   top: 100%;
-  background: #fff;
-  border: 1px solid #dcdcde;
+  background: ${COLORS.white};
+  border: 1px solid ${COLORS.icon};
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   min-width: 200px;

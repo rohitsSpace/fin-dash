@@ -1,4 +1,5 @@
 import * as React from "react";
+
 const ServicesIcon = ({ size = 25, ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -41,4 +42,5 @@ const ServicesIcon = ({ size = 25, ...props }) => (
     </defs>
   </svg>
 );
+
 export default ServicesIcon;

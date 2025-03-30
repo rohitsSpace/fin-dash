@@ -10,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import { COLORS } from "../../constants/colors";
 
 ChartJS.register(
   CategoryScale,
@@ -23,7 +24,7 @@ ChartJS.register(
 const ChartContainer = styled.div`
   width: 100%;
   padding: 20px;
-  background: white;
+  background: ${COLORS.white};
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
@@ -43,8 +44,8 @@ const WeeklyActivityChart = () => {
       {
         label: "Deposit",
         data: [320, 480, 210, 350, 500, 420, 460],
-        backgroundColor: "#232323",
-        borderColor: "#232323",
+        backgroundColor: COLORS.mindShaft,
+        borderColor: COLORS.mindShaft,
         borderWidth: 1,
         borderRadius: 25,
         borderSkipped: false,
@@ -52,8 +53,8 @@ const WeeklyActivityChart = () => {
       {
         label: "Withdraw",
         data: [280, 380, 500, 310, 240, 410, 350],
-        backgroundColor: "#396AFF",
-        borderColor: "#396AFF",
+        backgroundColor: COLORS.dodgerBlue,
+        borderColor: COLORS.dodgerBlue,
         borderWidth: 1,
         borderRadius: 25,
         borderSkipped: false,

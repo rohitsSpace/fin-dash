@@ -12,6 +12,7 @@ import {
   Legend,
   Filler,
 } from "chart.js";
+import { COLORS } from "../../constants/colors";
 
 ChartJS.register(
   CategoryScale,
@@ -47,7 +48,7 @@ const BalanceHistoryChart = () => {
       {
         label: "Balance",
         data: [100, 150, 400, 500, 400, 750, 650],
-        borderColor: "#1814F3",
+        borderColor: COLORS.blue,
         backgroundColor: "rgba(57, 106, 255, 0.1)",
         borderWidth: 3,
         tension: 0.4,
@@ -55,7 +56,7 @@ const BalanceHistoryChart = () => {
           target: "origin",
           above: "rgba(57, 106, 255, 0.1)",
         },
-        pointBackgroundColor: "#396AFF",
+        pointBackgroundColor: COLORS.dodgerBlue,
         pointRadius: 0,
       },
     ],

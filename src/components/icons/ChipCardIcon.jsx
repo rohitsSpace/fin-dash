@@ -1,14 +1,15 @@
 import * as React from "react";
+import { COLORS } from "../../constants/colors";
 
 const ChipCardIcon = ({ size = 35, variant = "light", ...props }) => {
   const colors = {
     light: {
-      chip: "#fff",
+      chip: COLORS.white,
       details: "#000",
     },
     dark: {
       chip: "#000",
-      details: "#fff",
+      details: COLORS.white,
     },
   };
 
