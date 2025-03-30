@@ -1,5 +1,4 @@
-import { DashboardCard } from "../components/layout/styles";
-
+import { DashboardCard } from "../components/common/styles";
 
 const LoansPage = () => (
   <DashboardCard>

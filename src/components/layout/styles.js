@@ -111,7 +111,7 @@ export const MenuIcon = styled.span`
 export const HeaderContainer = styled.header`
   background-color: #ffffff;
   border-bottom: 1px solid #dcdcde;
-  padding: 0 20px;
+  padding: 0 25px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   height: 100px;
   display: flex;
@@ -158,7 +158,7 @@ export const SearchBar = styled.div`
 
   input {
     width: 100%;
-    height: 32px;
+    height: 50px;
     padding: 8px 10px 8px 3rem;
     border: 1px solid #f5f7fa;
     border-radius: 40px;
@@ -233,10 +233,10 @@ export const HeaderIcon = styled.button`
     &::after {
       content: '';
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 8px;
-      height: 8px;
+      top: .75rem;
+      right: .75rem;
+      width: .75rem;
+      height: .75rem;
       background-color: #d63638;
       border-radius: 50%;
       border: 2px solid #fff;
@@ -273,8 +273,8 @@ export const UserProfile = styled.div`
 `;
 
 export const Avatar = styled.div`
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -336,34 +336,4 @@ export const Hamburger = styled.button`
     padding: 0;
     display: flex;
   }
-`;
-
-export const DashboardContainer = styled.div`
-  display: flex;
-  min-height: 100vh;
-`;
-
-export const MainContent = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  @media (max-width: 768px) {
-    padding: 0 25px;
-  }
-`;
-
-export const ContentArea = styled.main`
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-`;
-
-export const DashboardCard = styled.div`
-  background: #ffffff;
-  border: 1px solid #dcdcde;
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 `;

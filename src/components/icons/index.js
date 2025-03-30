@@ -1,9 +1,11 @@
 export { default as AccountsIcon } from "./AccountsIcon";
+export { default as ChipCardIcon } from "./ChipCardIcon";
 export { default as CreditCardsIcon } from "./CreditCardsIcon";
 export { default as HomeIcon } from "./HomeIcon";
 export { default as InvestmentsIcon } from "./InvestmentsIcon";
 export { default as LoansIcon } from "./LoansIcon";
 export { default as LogoIcon } from "./Logo";
+export { default as MasterCardIcon } from "./MasterCardIcon";
 export { default as MyPrivilegesIcon } from "./MyPrivilegesIcon";
 export { default as ServicesIcon } from "./ServicesIcon";
 export { default as SettingsIcon } from "./SettingsIcon";

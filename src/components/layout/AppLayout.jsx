@@ -5,14 +5,9 @@ import Header from "./Header";
 import useMobileDetect from "../../hooks/useMobileDetect";
 import useDebounce from "../../hooks/useDebounce";
 import { menuItems } from "../../constants/menuItems";
-import {
-  ContentArea,
-  DashboardContainer,
-  MainContent,
-  SearchBar,
-  SearchIcon,
-} from "./styles";
 import RoutesComponent from "../common/RoutesComponent";
+import { ContentArea, DashboardContainer, MainContent } from "../common/styles";
+import { SearchBar, SearchIcon } from "./styles";
 
 const AppLayout = React.memo(() => {
   const { isMobile: isMobileBreakPoint } = useMobileDetect();
