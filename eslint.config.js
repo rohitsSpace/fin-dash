@@ -29,5 +29,13 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    overrides: [
+      {
+        files: ["tests/**/*"],
+        env: {
+          jest: true,
+        },
+      },
+    ],
   },
 ];

@@ -45,7 +45,7 @@ const Header = ({ toggleSidebar, isMobileBreakPoint, closeSidebar }) => {
           color: `${COLORS.rhino}`,
         }}
       >
-        {currentPage.id === "dashboard" ? "Overview" : currentPage.label}
+        {currentPage?.id === "dashboard" ? "Overview" : currentPage?.label}
       </h1>
 
       <HeaderTools>
